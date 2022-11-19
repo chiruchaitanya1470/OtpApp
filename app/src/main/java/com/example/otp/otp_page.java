@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -18,6 +19,7 @@ import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 
 public class otp_page extends AppCompatActivity {
+    public static  String pres_name="my prefs";
     Button proceed;
     EditText code;
     String verificationId;
@@ -46,6 +48,12 @@ public class otp_page extends AppCompatActivity {
                                     @Override
                                     public void onComplete(@NonNull Task<AuthResult> task) {
                                         if(task.isSuccessful()){
+                                            SharedPreferences sharedPreferences=getSharedPreferences(otp_page.pres_name,0);
+                                            SharedPreferences.Editor editor=sharedPreferences.edit();
+
+                                            editor.putBoolean("haslogged",true);
+                                            editor.commit();
+
                                             Intent intent=new Intent(getApplicationContext(),Home.class);
                                             startActivity(intent);
 

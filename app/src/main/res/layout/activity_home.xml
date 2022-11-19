@@ -4,13 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Home">
+
     <TextView
+        android:id="@+id/textview"
+        android:layout_width="210dp"
+        android:layout_height="370dp"
+     android:layout_marginStart="95sp"
+        android:layout_marginTop="50sp"
+        android:gravity="center"
+        android:text="" />
+    <Button
+        android:id="@+id/connect"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="200dp"
-        android:layout_marginStart="150dp"
-        android:text="page opened"/>
+        android:text="connect"
+        android:layout_gravity="center"
+        android:layout_marginTop="50sp"/>
+
 
 </LinearLayout>
